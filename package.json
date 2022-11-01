@@ -1,0 +1,23 @@
+{
+   "name": "cadence-logistics",
+   "version": "1.0.0",
+   "start-date": "11/1/2022",
+   "description": "A full website for a logistics company in Lagos, Nigeria.",
+   "main": "main.js",
+   "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "keywords": [],
+   "author": "adebola-io",
+   "license": "ISC",
+   "devDependencies": {
+      "@vitejs/plugin-vue": "^3.2.0",
+      "vite": "^3.2.2"
+   },
+   "dependencies": {
+      "vue": "^3.2.41",
+      "vue-router": "^4.1.6"
+   }
+}
