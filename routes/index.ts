@@ -1,8 +1,7 @@
 import AboutVue from "./About/About.vue";
 import HomeVue from "./Home/Home.vue";
 
-// import {RouterLink} from "vue-router";
-export const routes = [
+export default [
    {
       path: "/",
       component: HomeVue,
