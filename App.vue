@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const r = 8;
+import AppHeader from "./components/layout/AppHeader.vue";
 </script>
 
 <template>
-   <div>Hello World</div>
+   <AppHeader />
 </template>

@@ -1,2 +1,7 @@
+# Dependencies
 node_modules
 pnpm-lock.yaml
+
+# Production
+dist
+coverage
