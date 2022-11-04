@@ -17,7 +17,7 @@ The corresponding design for the layout of the site is hosted on Figma [at this 
 ## 🤖 Tech Stack
 
 -  A large portion of the code is written in **Typescript**.
--  The project makes use of **Vue**, and relies heavily on Vue 3 and the Composition API.
+-  The project makes use of **Vue**, and relies heavily on Vue 3, the Composition API and related Vue-based technologies.
 -  The testing framework used in this project in **Vitest**, and the test suite can be run with the `test` script in the `package.json` file.
 -  This project also uses the **GSAP** animation library.
 -  The build tool for this project is **Vite**.

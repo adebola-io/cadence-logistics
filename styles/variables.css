@@ -1,0 +1,15 @@
+:root {
+   --Dark-Green: #204b57;
+   --Another-Dark-Green: #125e8a;
+   --Yet-Another-Dark-Green: #08527c;
+   --Heading-Text-Gradient: linear-gradient(
+      94.74deg,
+      #3c92ca 10.56%,
+      #125e8a 94.88%
+   );
+   --Vertical-Squeeze: 120px;
+}
+
+body {
+   color: var(--Dark-Green);
+}

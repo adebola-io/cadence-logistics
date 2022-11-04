@@ -1,5 +1,6 @@
 import AboutVue from "./About/About.vue";
 import HomeVue from "./Home/Home.vue";
+import ServicesVue from "./Services/Services.vue";
 
 export default [
    {
@@ -7,7 +8,11 @@ export default [
       component: HomeVue,
    },
    {
-      path: "/about-us",
+      path: "/about",
       component: AboutVue,
+   },
+   {
+      path: "/services",
+      component: ServicesVue,
    },
 ];

@@ -1,16 +1,18 @@
-import { test, describe, expect } from "vitest";
-import { render, screen } from "@testing-library/vue";
-import Header from "./AppHeader.vue";
+import setup from "@/tests/setup";
+import { afterAll, beforeEach, describe, expect, test } from "vitest";
+import AppHeaderVue from "./AppHeader.vue";
 
-describe("Header.vue", () => {
-   test("should render navigations", () => {
-      render(Header);
+describe("AppHeader.vue", () => {
+   beforeEach(() => {
+      setup.stage(AppHeaderVue);
+   });
 
-      expect(screen.getByText(/Home/)).toBeDefined();
-      expect(screen.getByText(/Services/)).toBeDefined();
-      expect(screen.getByText(/About/)).toBeDefined();
-      expect(screen.getByText(/Track\sAn\sItem/)).toBeDefined();
-      // const navbar = wrapper.findComponent("navbar");
-      // console.log(navbar);
+   test("should render links", () => {
+      const text = setup.wrapper.text();
+      expect(text).toContain("Home");
+      expect(text).toContain("About");
+      expect(text).toContain("Services");
+      expect(text).toContain("Track An Item");
+      expect(text).toContain("Contact");
    });
 });
