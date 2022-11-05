@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @font-face {
    font-family: "Product Sans";
-   src: url(@/assets/fonts/Product%20Sans/Product%20Sans%20Regular.ttf);
+   src: url(../assets/fonts/Product_Sans_Regular.ttf);
 }
 
 body {
