@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import { onMounted, reactive, ref } from "vue";
+import { computed, onMounted, reactive, ref, watch } from "vue";
 import Logo from "@/assets/svg/logo.svg";
-import { useStore } from "@/stores";
+import { Page, useStore } from "@/stores";
 import gsap from "gsap";
-const store = useStore();
+import { useRouter } from "vue-router";
+const store = useStore(),
+   router = useRouter();
 const headerRef = ref<HTMLElement | null>(null);
+const path = computed(() => router.currentRoute.value.fullPath);
+
+watch(path, () => {
+   store.changePage(path.value as Page);
+});
 
 onMounted(() => {
    gsap.from(headerRef.value, {
@@ -13,9 +20,7 @@ onMounted(() => {
       ease: "elastic.out",
    });
 });
-const links = reactive<
-   Array<{ text: "Home" | "Services" | "About Us"; to: string }>
->([
+const links = reactive<Array<{ to: Page; text: string }>>([
    {
       text: "Home",
       to: "/",
@@ -38,9 +43,8 @@ const links = reactive<
          <menu class="Navlinks">
             <router-link
                v-for="link in links"
-               @click="store.changePage(link.text)"
                :class="[
-                  { Selected: store.page === link.text },
+                  { Selected: store.page === link.to },
                   `Header-${link.text.split(/\s/g).join('-')}-Link`,
                   'Navlink',
                ]"
@@ -88,7 +92,7 @@ const links = reactive<
 }
 .Navlink.Selected {
    font-weight: 700;
-   text-decoration: underline;
+   border-bottom: 3px solid var(--Dark-Green);
 }
 .Item-Tracker-Button {
    padding: 14px 24px;

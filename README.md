@@ -1,4 +1,4 @@
-<h1 align="center"><img style="height: 100px" src="./assets/logo.svg"></img></h1>
+<h1 align="center"><img style="height: 100px" src="./assets/svg/logo.svg"></img></h1>
 
 <h5 align="center"> Start Date: 25th October, 2022.</h5>
 

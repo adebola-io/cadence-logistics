@@ -1,9 +1,9 @@
 import { defineStore } from "pinia";
 
-type Page = "Home" | "About Us" | "Services";
+export type Page = "/" | "/services" | "/about";
 
 export const useStore = defineStore("main", {
-   state: () => ({ page: "Home" as Page }),
+   state: () => ({ page: window.location.pathname as Page }),
    actions: {
       changePage(to: Page) {
          this.page = to;
