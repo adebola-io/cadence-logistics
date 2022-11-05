@@ -1,15 +1,12 @@
-import { createApp, DirectiveBinding } from "vue";
+import { createApp } from "vue";
 import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
-import "./styles";
-import { AnimationConfig, runAnimationConfig } from "./animations";
 import { AnimateDirective } from "./directives";
-
-const pinia = createPinia();
+import "./styles";
 
 createApp(App)
-   .use(pinia)
+   .use(createPinia())
    .use(router)
    .directive("animate", AnimateDirective)
    .mount("#vue-app");

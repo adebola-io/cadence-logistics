@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import gsap from "gsap";
 import PaperPlane from "@/assets/svg/paper-plane.svg";
 import DollarSign from "@/assets/svg/dollar.svg";
 import NairaSign from "@/assets/svg/naira.svg";
@@ -7,7 +8,6 @@ import Location from "@/assets/svg/location.svg";
 import Box from "@/assets/svg/box.svg";
 import Handshake from "@/assets/svg/handshake.svg";
 import { PAPER_PLANE } from "@/animations";
-import gsap from "gsap";
 import { onMounted, ref } from "vue";
 import GridItem from "./GridItem.vue";
 

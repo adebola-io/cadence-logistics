@@ -31,3 +31,7 @@ ul {
 html {
    scrollbar-color: green;
 }
+
+li {
+   list-style: none;
+}
