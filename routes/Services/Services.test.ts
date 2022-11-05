@@ -14,4 +14,8 @@ describe("Services.vue", () => {
       const services = setup.wrapper.findAll(".Service-Item");
       expect(services).toHaveLength(6);
    });
+   test("should show partners", () => {
+      const partners = setup.wrapper.findAll("img.Partner");
+      expect(partners).toHaveLength(6);
+   });
 });

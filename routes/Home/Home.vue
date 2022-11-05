@@ -152,13 +152,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.Section {
-   position: relative;
-   height: 100vh;
-   max-height: 900px;
-   overflow-y: visible;
-   padding-inline: var(--Vertical-Squeeze);
-}
 .Heading {
    font-family: "Raleway";
    font-style: normal;

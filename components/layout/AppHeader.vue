@@ -7,10 +7,9 @@ import { useRouter } from "vue-router";
 const store = useStore(),
    router = useRouter();
 const headerRef = ref<HTMLElement | null>(null);
-const path = computed(() => router.currentRoute.value.fullPath);
 
-watch(path, () => {
-   store.changePage(path.value as Page);
+watch(router.currentRoute, (val) => {
+   store.changePage(val.fullPath as Page);
 });
 
 onMounted(() => {

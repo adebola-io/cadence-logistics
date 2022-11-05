@@ -2,3 +2,11 @@
 @import "./default.css";
 @import "./fonts.css";
 @import "./variables.css";
+
+.Section {
+   position: relative;
+   height: 100vh;
+   max-height: 900px;
+   overflow-y: visible;
+   padding-inline: var(--Vertical-Squeeze);
+}
