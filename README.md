@@ -8,7 +8,7 @@ This is a repository holding the code for the website of the (concept) company C
 
 ## 🚀 Production
 
-You can see the live version of the site [here](http://cadence-inc.vercel.app).
+You can see the live version of the site [here](http://cadence-logistics.vercel.app).
 
 ## 🎨 Design
 
