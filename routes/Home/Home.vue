@@ -7,66 +7,49 @@ import World from "@/assets/svg/world.svg";
 import Location from "@/assets/svg/location.svg";
 import Box from "@/assets/svg/box.svg";
 import Handshake from "@/assets/svg/handshake.svg";
-import { PAPER_PLANE } from "@/animations";
+import { PAPER_PLANE, tweens } from "@/animations";
 import { onMounted, ref } from "vue";
 import GridItem from "./GridItem.vue";
 
-let line: HTMLElement | null,
-   naira: HTMLElement | null,
-   dollar: HTMLElement | null;
+const section2Ref = ref<Nullable<HTMLElement>>(null),
+   section3Ref = ref<Nullable<HTMLElement>>(null),
+   section4Ref = ref<Nullable<HTMLElement>>(null),
+   observeroptions = {
+      threshold: 0.5,
+   };
 
-const firstHeadingRef = ref<HTMLHeadingElement | null>(null),
-   section2Ref = ref<HTMLElement | null>(null);
+// Animation observers.
+const section2Observer = new IntersectionObserver(([{ isIntersecting }]) => {
+   const tweenvar = isIntersecting ? 1 : 0;
+   gsap.to(".Section-2 .Heading", tweens.secondHeading[tweenvar]);
+   gsap.to(".Section-2 .Line", tweens.homeline[tweenvar]);
+   gsap.to(".Section-2 .Naira-Sign", tweens.nairaSign[tweenvar]);
+   gsap.to(".Section-2 .Dollar-Sign", tweens.dollarSign[tweenvar]);
+}, observeroptions);
 
-function addObserver(element: Element) {
-   // Animations.
-   new IntersectionObserver(
-      ([{ isIntersecting: intersect }]) => {
-         const timeline = gsap.timeline();
-         timeline.to(line, {
-            scaleX: intersect ? 1 : 0.1,
-            duration: 0.6,
-         });
-         timeline.to(
-            naira,
-            {
-               xPercent: intersect ? 0 : 100,
-               yPercent: intersect ? 0 : 50,
-               opacity: intersect ? 1 : 0,
-               rotate: intersect ? 0 : 9,
-               duration: 0.5,
-            },
-            "<"
-         );
-         timeline.to(
-            dollar,
-            {
-               xPercent: intersect ? 0 : -100,
-               yPercent: intersect ? 0 : -50,
-               opacity: intersect ? 1 : 0,
-               rotate: intersect ? 0 : -9,
-               duration: 0.5,
-            },
-            "<"
-         );
-      },
-      {
-         threshold: 0.5,
-      }
-   ).observe(element);
-}
+const section3Observer = new IntersectionObserver(([{ isIntersecting }]) => {
+   const tweenvar = isIntersecting ? 1 : 0;
+   let timeline = gsap.timeline();
+   timeline.to(".Section-3 .Heading", tweens.heading3[tweenvar]);
+   timeline.to(".Section-Grid-Item", tweens.section3Highlights[tweenvar]);
+}, observeroptions);
+
+const section4Observer = new IntersectionObserver(([{ isIntersecting }]) => {
+   const tweenvar = isIntersecting ? 1 : 0;
+   gsap.to(".Section-4 .Heading", tweens.heading4[tweenvar]);
+}, observeroptions);
 
 onMounted(() => {
-   gsap.from(firstHeadingRef.value, {
-      xPercent: -80,
-      opacity: 0,
-      duration: 0.9,
-   });
-   const section2 = section2Ref.value as HTMLElement;
-   line = section2.querySelector("hr");
-   naira = section2.querySelector("img.Naira-Sign");
-   dollar = section2.querySelector("img.Dollar-Sign");
-   if (dollar) addObserver(section2);
+   gsap.from(".Section-1 .Heading", tweens.firstHeading[0]);
+   const [section2, section3, section4] = [
+      section2Ref.value,
+      section3Ref.value,
+      section4Ref.value,
+   ] as HTMLElement[];
+
+   section2 && section2Observer.observe(section2);
+   section3 && section3Observer.observe(section3);
+   section4 && section4Observer.observe(section4);
 });
 </script>
 
@@ -74,9 +57,7 @@ onMounted(() => {
    <main class="Home">
       <section class="Section Section-1">
          <div class="Text">
-            <h1 ref="firstHeadingRef" class="Heading">
-               Here to there, <span class="Heading-Block">in record time.</span>
-            </h1>
+            <h1 class="Heading">Here to there, in record time.</h1>
             <p class="Paragraph">
                Cadence is a logistics company focused on providing the best
                means of transport for your products and services. Send anything
@@ -116,7 +97,7 @@ onMounted(() => {
             See Our Pricing List
          </button>
       </section>
-      <section class="Section Section-3">
+      <section ref="section3Ref" class="Section Section-3">
          <h1 class="Heading">Seamless and Secure Delivery.</h1>
          <div class="Grid-Container">
             <GridItem :src="World" alt="A white outline of a globe.">
@@ -132,7 +113,7 @@ onMounted(() => {
          </div>
          <button type="button" class="Action-Button">Learn More</button>
       </section>
-      <section class="Section Section-4">
+      <section ref="section4Ref" class="Section Section-4">
          <div class="Handshake-Container">
             <img :src="Handshake" class="Handshake" alt="A handshake" />
          </div>
@@ -183,10 +164,6 @@ onMounted(() => {
    display: grid;
    grid: auto/ 48% 52%;
    place-items: center;
-}
-
-.Section-1 .Heading .Heading-Block {
-   display: block;
 }
 .Section-1 .Paragraph {
    width: 80%;

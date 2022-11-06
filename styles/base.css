@@ -7,7 +7,7 @@
    position: relative;
    height: 100vh;
    max-height: 900px;
-   overflow-y: visible;
+   overflow: hidden;
    padding-inline: var(--Vertical-Squeeze);
 }
 
@@ -15,8 +15,7 @@
    font-family: "Raleway";
    font-style: normal;
    font-weight: bold;
-   font-size: 95.229px;
-   line-height: 121px;
+   font-size: 90.229px;
    letter-spacing: 0.01em;
    background: var(--Heading-Text-Gradient);
    -webkit-background-clip: text;

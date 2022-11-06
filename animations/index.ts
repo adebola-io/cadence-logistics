@@ -1,9 +1,3 @@
-export interface AnimationConfig<T extends Element = HTMLElement>
-   extends KeyframeAnimationOptions {
-   frames: Array<Partial<Omit<CSSStyleDeclaration, keyof Keyframe>> & Keyframe>;
-   onAnimationEnd?: (el: T, animation: Animation) => void;
-}
-
 /**
  * Runs an animation on an element.
  * @param target The element to animate.
@@ -49,3 +43,5 @@ export const PAPER_PLANE: AnimationConfig<HTMLImageElement> = {
       });
    },
 };
+
+export * from "./tweens";
