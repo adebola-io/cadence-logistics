@@ -152,21 +152,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.Heading {
-   font-family: "Raleway";
-   font-style: normal;
-   font-weight: bold;
-   font-size: 95.229px;
-   line-height: 121px;
-   letter-spacing: 0.01em;
-   background: var(--Heading-Text-Gradient);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   background-clip: text;
-   flex: none;
-   order: 0;
-   flex-grow: 0;
-}
 .Paragraph {
    font-family: "Product Sans";
    font-style: normal;

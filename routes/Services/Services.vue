@@ -95,16 +95,11 @@ import Macys from "@/assets/svg/macys.svg";
    background: linear-gradient(105.76deg, #11567d 6.99%, #174552 85.54%);
 }
 .Section-1 .Heading {
-   font-family: "Raleway";
-   font-style: normal;
-   font-weight: 700;
-   font-size: 103.229px;
-   line-height: 121px;
-   display: flex;
-   align-items: center;
-   text-align: center;
-   letter-spacing: 0.01em;
    color: #c1dbe4;
+   background-clip: unset;
+   -webkit-background-clip: unset;
+   -webkit-text-fill-color: unset;
+   background: none;
 }
 .Section-1 .Line {
    width: 75%;

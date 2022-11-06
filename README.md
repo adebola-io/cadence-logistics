@@ -35,7 +35,9 @@ npm run dev
 
 The last command should start a development server at `localhost:5173`.
 
-> `NOTE`: The dev server may not work in versions of Node.js lower than 18, due to the core module prefix. If that error occurs, simply go to the `vite.config.ts` file and replace:
+> `NOTE`:
+>
+> 1. The dev server may not work in versions of Node.js lower than 18, due to the core module prefix. If that error occurs, simply go to the `vite.config.ts` file and replace:
 >
 > ```js
 > import path from "node:path";
@@ -46,3 +48,5 @@ The last command should start a development server at `localhost:5173`.
 > ```js
 > import path from "path";
 > ```
+>
+> 2. This makes use of the experimental `<Suspense/>` component. Not because it's necessary or even beneficial, just because its fun to use.

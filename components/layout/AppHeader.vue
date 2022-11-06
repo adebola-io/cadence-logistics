@@ -36,29 +36,33 @@ const links = reactive<Array<{ to: Page; text: string }>>([
 </script>
 
 <template>
-   <header ref="headerRef" class="Header">
-      <img :src="Logo" alt="Cadence" class="Logo" />
-      <nav class="Navigation-Bar">
-         <menu class="Navlinks">
-            <router-link
-               v-for="link in links"
-               :class="[
-                  { Selected: store.page === link.to },
-                  `Header-${link.text.split(/\s/g).join('-')}-Link`,
-                  'Navlink',
-               ]"
-               :to="link.to"
-               :key="link.text"
-            >
-               {{ link.text }}
-            </router-link>
-            <button type="button" class="Navlink Contact-Us">Contact Us</button>
-            <button type="button" class="Item-Tracker-Button">
-               Track An Item
-            </button>
-         </menu>
-      </nav>
-   </header>
+   <Teleport to="body">
+      <header ref="headerRef" class="Header">
+         <img :src="Logo" alt="Cadence" class="Logo" />
+         <nav class="Navigation-Bar">
+            <menu class="Navlinks">
+               <router-link
+                  v-for="link in links"
+                  :class="[
+                     { Selected: store.page === link.to },
+                     `Header-${link.text.split(/\s/g).join('-')}-Link`,
+                     'Navlink',
+                  ]"
+                  :to="link.to"
+                  :key="link.text"
+               >
+                  {{ link.text }}
+               </router-link>
+               <button type="button" class="Navlink Contact-Us">
+                  Contact Us
+               </button>
+               <button type="button" class="Item-Tracker-Button">
+                  Track An Item
+               </button>
+            </menu>
+         </nav>
+      </header>
+   </Teleport>
 </template>
 
 <style scoped>
