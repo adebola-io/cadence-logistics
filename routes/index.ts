@@ -1,18 +1,18 @@
-import AboutVue from "./About/About.vue";
-import HomeVue from "./Home/Home.vue";
-import ServicesVue from "./Services/Services.vue";
+const About = () => import("./About/About.vue");
+const Home = () => import("./Home/Home.vue");
+const Services = () => import("./Services/Services.vue");
 
 export default [
    {
       path: "/",
-      component: HomeVue,
+      component: Home,
    },
    {
       path: "/about",
-      component: AboutVue,
+      component: About,
    },
    {
       path: "/services",
-      component: ServicesVue,
+      component: Services,
    },
 ];

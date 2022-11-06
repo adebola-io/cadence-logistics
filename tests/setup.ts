@@ -40,7 +40,7 @@ export class TestSetup {
    }
    private mountingOptions(): Parameters<typeof mount>[1] {
       (this as any).router = createRouter({
-         routes: routes,
+         routes,
          history: createWebHashHistory(),
       });
       (this as any).pinia = createPinia();

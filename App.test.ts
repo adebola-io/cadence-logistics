@@ -3,8 +3,8 @@ import AppVue from "./App.vue";
 import setup from "@/tests/setup";
 
 describe("App.vue", () => {
-   beforeEach(() => {
-      setup.stage(AppVue);
+   beforeEach(async () => {
+      await setup.stage(AppVue);
    });
 
    test("should start on home", async () => {
