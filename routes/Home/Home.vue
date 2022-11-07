@@ -292,7 +292,7 @@ onMounted(() => {
    width: 130%;
    transform: rotate(-4deg);
 }
-@media (max-width: 912px) {
+@media (max-width: 1024px) {
    .Section-2 .Heading {
       width: 70%;
    }
@@ -369,8 +369,6 @@ onMounted(() => {
       min-width: 300px;
    }
    .Section-4 .Text {
-      display: flex;
-      justify-content: center;
       align-items: center;
    }
    .Section-4 .Heading,
@@ -382,6 +380,51 @@ onMounted(() => {
    }
    .Section-4 .Paragraph {
       width: 80%;
+   }
+}
+@media (max-width: 425px) {
+   .Paragraph {
+      font-size: 18px;
+      width: 80%;
+   }
+   .Section-1 .Heading {
+      width: 90%;
+   }
+   .Paper-Plane-Container {
+      width: 90%;
+      height: 35%;
+      max-height: 400px;
+   }
+   .Section-1 .Paper-Plane {
+      width: 60%;
+   }
+   .Floating-Image {
+      width: 30%;
+   }
+   .Floating-Image.Naira-Sign {
+      left: 0;
+   }
+   .Floating-Image.Dollar-Sign {
+      right: 0;
+   }
+
+   .Section-4 .Text {
+      width: 100%;
+   }
+   .Section-4 .Paragraph {
+      width: 80%;
+      min-width: 0;
+   }
+   .Handshake {
+      min-width: 0;
+      max-height: 400px;
+   }
+}
+@media (max-width: 380px) {
+   section.Section .Paragraph {
+      font-size: 15px;
+      line-height: 25px;
+      width: 90%;
    }
 }
 </style>

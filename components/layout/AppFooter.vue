@@ -129,7 +129,7 @@ import Instagram from "@/assets/svg/instagram.svg";
    margin-bottom: 40px;
    color: #11567d;
 }
-@media (max-width: 912px) {
+@media (max-width: 1024px) {
    .Logo-Container img {
       height: 50px;
    }
@@ -191,6 +191,20 @@ import Instagram from "@/assets/svg/instagram.svg";
    }
    .Links.Contact-Links {
       display: none;
+   }
+}
+@media (max-width: 425px) {
+   .Logo-Container p {
+      font-size: 9pt;
+   }
+   .Links h3 {
+      font-size: 15px;
+   }
+   .Links li {
+      font-size: 10pt;
+   }
+   .Copyright {
+      font-size: 10pt;
    }
 }
 </style>

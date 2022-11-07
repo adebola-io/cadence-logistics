@@ -10,10 +10,21 @@
    --Vertical-Squeeze: 120px;
    --Header-Size: 106px;
 }
+@media (min-width: 2000px) {
+   :root {
+      --Vertical-Squeeze: 220px;
+   }
+}
 
-@media (max-width: 912px) {
+@media (max-width: 1024px) {
    :root {
       --Vertical-Squeeze: 5vw;
+   }
+}
+
+@media (max-width: 425px) {
+   :root {
+      --Header-Size: 75px;
    }
 }
 

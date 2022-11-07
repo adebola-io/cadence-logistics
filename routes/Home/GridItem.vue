@@ -54,4 +54,9 @@ defineProps<{
       line-height: 27px;
    }
 }
+@media (max-width: 425px) {
+   .Section-Grid-Item {
+      width: 50vw;
+   }
+}
 </style>
