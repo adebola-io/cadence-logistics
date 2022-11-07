@@ -16,6 +16,12 @@ import Instagram from "@/assets/svg/instagram.svg";
             its affiliates.
          </p>
       </div>
+      <div class="Icon-Row Outer-Icon-Row">
+         <img :src="Facebook" alt="facebook icon" />
+         <img :src="Instagram" alt="instagram icon" />
+         <img :src="LinkedIn" alt="linkedin icon" />
+         <img :src="Twitter" alt="twitter icon" />
+      </div>
       <nav class="Links-Container">
          <li class="Links">
             <h3>INFO</h3>
@@ -43,7 +49,7 @@ import Instagram from "@/assets/svg/instagram.svg";
                <li>Management</li>
             </ul>
          </li>
-         <li class="Links">
+         <li class="Links Contact-Links">
             <h3>CONTACT</h3>
             <div class="Icon-Row">
                <img :src="Facebook" alt="facebook icon" />
@@ -88,14 +94,10 @@ import Instagram from "@/assets/svg/instagram.svg";
    font-family: "Raleway";
    font-weight: 700;
    font-size: 28px;
-   line-height: 33px;
    background: linear-gradient(94.74deg, #3c92ca 10.56%, #125e8a 94.88%);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    background-clip: text;
-   flex: none;
-   order: 0;
-   flex-grow: 0;
    margin-bottom: 10px;
 }
 .Links li {
@@ -111,6 +113,10 @@ import Instagram from "@/assets/svg/instagram.svg";
    column-gap: 5px;
    width: fit-content;
 }
+.Outer-Icon-Row {
+   display: none;
+}
+
 .Copyright {
    position: absolute;
    bottom: 0;
@@ -132,6 +138,59 @@ import Instagram from "@/assets/svg/instagram.svg";
    }
    .Links li {
       font-size: 14px;
+   }
+}
+@media (max-width: 768px) {
+   .App-Footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 540px;
+   }
+   .Logo-Container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+   }
+   .Logo-Container img {
+      height: 60px;
+   }
+   .Logo-Container p {
+      text-align: center;
+      width: 95%;
+      font-size: 11pt;
+      line-height: 19px;
+      margin-bottom: 0;
+   }
+   .Outer-Icon-Row {
+      display: grid;
+      column-gap: 13px;
+      margin-block: 40px;
+   }
+   .Icon-Row img {
+      height: 35px;
+   }
+   .Links-Container {
+      display: flex;
+      justify-content: space-around;
+      padding-inline: var(--Vertical-Squeeze);
+      margin-bottom: 30px;
+   }
+   .Links {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+   }
+   .Links > * {
+      text-align: center;
+   }
+   .Links li {
+      font-size: 13pt;
+   }
+   .Links.Contact-Links {
+      display: none;
    }
 }
 </style>

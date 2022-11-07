@@ -223,14 +223,6 @@ onMounted(() => {
    text-align: center;
    width: 60%;
 }
-@media (max-width: 912px) {
-   .Section-2 .Heading {
-      width: 70%;
-   }
-   .Section-2 .Paragraph {
-      width: 80%;
-   }
-}
 .Floating-Image {
    position: absolute;
    width: 15%;
@@ -277,16 +269,6 @@ onMounted(() => {
    border-radius: 11.3415px;
    background-color: transparent;
 }
-
-@media (max-width: 912px) {
-   .Section-3 .Heading {
-      width: 100%;
-      margin-bottom: 13px;
-   }
-   .Section-3 .Grid-Container {
-      margin-bottom: 13px;
-   }
-}
 .Section-4 {
    display: grid;
    grid: auto/ 48% 52%;
@@ -311,8 +293,95 @@ onMounted(() => {
    transform: rotate(-4deg);
 }
 @media (max-width: 912px) {
+   .Section-2 .Heading {
+      width: 70%;
+   }
+   .Section-2 .Paragraph {
+      width: 80%;
+   }
+   .Section-3 .Heading {
+      width: 100%;
+      margin-bottom: 13px;
+   }
+   .Section-3 .Grid-Container {
+      margin-bottom: 13px;
+   }
    .Handshake {
       width: 90%;
+   }
+}
+@media (max-width: 768px) {
+   .Section-1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+   }
+   .Section-1 .Text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+   }
+   .Section-1 .Heading {
+      text-align: center;
+      width: 70%;
+   }
+   .Section-1 .Paragraph {
+      text-align: center;
+      width: 80%;
+   }
+   .Paper-Plane-Container {
+      height: 40%;
+   }
+   .Paper-Plane {
+      height: 80%;
+   }
+   .Section-3 {
+      height: fit-content;
+      max-height: fit-content;
+   }
+   .Section-3 .Heading {
+      margin-top: 80px;
+      margin-bottom: 60px;
+      width: 70%;
+   }
+   .Section-3 .Grid-Container {
+      grid: repeat(3, auto) / auto;
+   }
+   .Section-3 .Action-Button {
+      margin-bottom: 80px;
+   }
+   .Section-4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+   }
+   .Handshake-Container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+   }
+   .Handshake {
+      width: 45vw;
+      min-width: 300px;
+   }
+   .Section-4 .Text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   .Section-4 .Heading,
+   .Section-4 .Paragraph {
+      text-align: center;
+   }
+   .Section-4 .Heading {
+      width: 70%;
+   }
+   .Section-4 .Paragraph {
+      width: 80%;
    }
 }
 </style>

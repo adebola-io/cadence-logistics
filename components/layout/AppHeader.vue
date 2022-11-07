@@ -80,36 +80,38 @@ const links = reactive<Array<{ to: Page; text: string }>>([
             <div class="Sidebar-Toggle-Line" v-for="x in 3"></div>
          </button>
       </header>
-      <Transition name="sidebar">
-         <aside v-if="sidebarIsOpen" class="Sidebar">
-            <TransitionGroup @enter="onEnter" :css="false">
-               <router-link
-                  @click="sidebarIsOpen = !sidebarIsOpen"
-                  v-for="(link, index) in links"
-                  :class="[
-                     { Selected: store.page === link.to },
-                     'Sidebar-Link',
-                  ]"
-                  :to="link.to"
-                  :key="link.text"
-                  :data-index="index"
-               >
-                  {{ link.text }}
-               </router-link>
-               <button
-                  type="button"
-                  :key="4"
-                  :data-index="3"
-                  class="Sidebar-Link"
-               >
-                  Contact Me
-               </button>
-               <button :key="5" :data-index="4" class="Item-Tracker-Button">
-                  Track an Item
-               </button>
-            </TransitionGroup>
-         </aside>
-      </Transition>
+      <Teleport to="body">
+         <Transition name="sidebar">
+            <aside v-if="sidebarIsOpen" class="Sidebar">
+               <TransitionGroup @enter="onEnter" :css="false">
+                  <router-link
+                     @click="sidebarIsOpen = !sidebarIsOpen"
+                     v-for="(link, index) in links"
+                     :class="[
+                        { Selected: store.page === link.to },
+                        'Sidebar-Link',
+                     ]"
+                     :to="link.to"
+                     :key="link.text"
+                     :data-index="index"
+                  >
+                     {{ link.text }}
+                  </router-link>
+                  <button
+                     type="button"
+                     :key="4"
+                     :data-index="3"
+                     class="Sidebar-Link"
+                  >
+                     Contact Me
+                  </button>
+                  <button :key="5" :data-index="4" class="Item-Tracker-Button">
+                     Track an Item
+                  </button>
+               </TransitionGroup>
+            </aside>
+         </Transition>
+      </Teleport>
    </Teleport>
 </template>
 
