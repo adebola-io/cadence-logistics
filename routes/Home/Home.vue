@@ -142,6 +142,7 @@ onMounted(() => {
    letter-spacing: 0.01em;
    color: var(--Yet-Another-Dark-Green);
 }
+
 .Action-Button {
    display: flex;
    flex-direction: row;
@@ -168,6 +169,12 @@ onMounted(() => {
 .Section-1 .Paragraph {
    width: 80%;
    text-align: justify;
+}
+@media (max-width: 912px) {
+   .Section-1 .Paragraph {
+      width: 100%;
+      font-size: 18px;
+   }
 }
 .Section-1 .Action-Button {
    width: 160px;
@@ -216,6 +223,14 @@ onMounted(() => {
    text-align: center;
    width: 60%;
 }
+@media (max-width: 912px) {
+   .Section-2 .Heading {
+      width: 70%;
+   }
+   .Section-2 .Paragraph {
+      width: 80%;
+   }
+}
 .Floating-Image {
    position: absolute;
    width: 15%;
@@ -262,6 +277,16 @@ onMounted(() => {
    border-radius: 11.3415px;
    background-color: transparent;
 }
+
+@media (max-width: 912px) {
+   .Section-3 .Heading {
+      width: 100%;
+      margin-bottom: 13px;
+   }
+   .Section-3 .Grid-Container {
+      margin-bottom: 13px;
+   }
+}
 .Section-4 {
    display: grid;
    grid: auto/ 48% 52%;
@@ -284,5 +309,10 @@ onMounted(() => {
 .Handshake {
    width: 130%;
    transform: rotate(-4deg);
+}
+@media (max-width: 912px) {
+   .Handshake {
+      width: 90%;
+   }
 }
 </style>

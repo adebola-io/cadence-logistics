@@ -21,7 +21,14 @@ defineProps<{
    align-items: center;
    flex-direction: column;
    height: 234.1px;
+   font-size: 17px;
    width: 15vw;
+}
+@media (max-width: 912px) {
+   .Section-Grid-Item {
+      width: 23vw;
+      font-size: 15px;
+   }
 }
 .Image {
    height: 140px;
@@ -31,7 +38,7 @@ defineProps<{
    font-style: normal;
    font-weight: 500;
    margin-top: 25px;
-   font-size: 17px;
+
    line-height: 17px;
    text-align: center;
    letter-spacing: 0.01em;

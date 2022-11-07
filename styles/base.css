@@ -2,6 +2,7 @@
 @import "./default.css";
 @import "./fonts.css";
 @import "./variables.css";
+@import "./transitions.css";
 
 .Section {
    position: relative;
@@ -24,4 +25,10 @@
    flex: none;
    order: 0;
    flex-grow: 0;
+}
+
+@media (max-width: 912px) {
+   .Heading {
+      font-size: 60px;
+   }
 }

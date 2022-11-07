@@ -1,5 +1,5 @@
+import Home from "./Home/Home.vue";
 const About = () => import("./About/About.vue");
-const Home = () => import("./Home/Home.vue");
 const Services = () => import("./Services/Services.vue");
 
 export default [

@@ -12,18 +12,3 @@ import AppHeader from "./components/layout/AppHeader.vue";
    </RouterView>
    <AppFooter />
 </template>
-
-<style scoped>
-.fade-leave-enter-active,
-.fade-leave-leave-active {
-   transition-duration: 500ms;
-}
-.fade-leave-leave-to {
-   transform: translateX(10%);
-   opacity: 0;
-}
-.fade-leave-enter-from {
-   opacity: 0;
-   transform: translateX(-10%);
-}
-</style>

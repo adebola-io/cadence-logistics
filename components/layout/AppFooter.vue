@@ -72,14 +72,13 @@ import Instagram from "@/assets/svg/instagram.svg";
    height: 66px;
 }
 .Logo-Container p {
-   font-family: "Product Sans";
-   font-style: normal;
    max-width: 400px;
    font-weight: 700;
    font-size: 13px;
    line-height: 16px;
    color: #125e8a;
 }
+
 .Links-Container {
    display: grid;
    grid-template-columns: repeat(4, 25%);
@@ -87,7 +86,6 @@ import Instagram from "@/assets/svg/instagram.svg";
 }
 .Links h3 {
    font-family: "Raleway";
-   font-style: normal;
    font-weight: 700;
    font-size: 28px;
    line-height: 33px;
@@ -101,8 +99,6 @@ import Instagram from "@/assets/svg/instagram.svg";
    margin-bottom: 10px;
 }
 .Links li {
-   font-family: "Product Sans";
-   font-style: normal;
    font-weight: 400;
    font-size: 16px;
    line-height: 19px;
@@ -126,5 +122,16 @@ import Instagram from "@/assets/svg/instagram.svg";
    text-align: center;
    margin-bottom: 40px;
    color: #11567d;
+}
+@media (max-width: 912px) {
+   .Logo-Container img {
+      height: 50px;
+   }
+   .Links h3 {
+      font-size: 20px;
+   }
+   .Links li {
+      font-size: 14px;
+   }
 }
 </style>

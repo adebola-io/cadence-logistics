@@ -8,6 +8,13 @@
       #125e8a 94.88%
    );
    --Vertical-Squeeze: 120px;
+   --Header-Size: 106px;
+}
+
+@media (max-width: 912px) {
+   :root {
+      --Vertical-Squeeze: 5vw;
+   }
 }
 
 body {
