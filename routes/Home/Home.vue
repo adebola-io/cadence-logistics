@@ -21,8 +21,8 @@ const section2Ref = ref<Nullable<HTMLElement>>(null),
 // Animation observers.
 const section2Observer = new IntersectionObserver(([{ isIntersecting }]) => {
    const tweenvar = isIntersecting ? 1 : 0;
-   gsap.to(".Section-2 .Heading", tweens.secondHeading[tweenvar]);
-   gsap.to(".Section-2 .Line", tweens.homeline[tweenvar]);
+   gsap.to(".Section-2 .Heading", tweens.fadeInFromTop[tweenvar]);
+   gsap.to(".Section-2 .Line", tweens.lineExpand[tweenvar]);
    gsap.to(".Section-2 .Naira-Sign", tweens.nairaSign[tweenvar]);
    gsap.to(".Section-2 .Dollar-Sign", tweens.dollarSign[tweenvar]);
 }, observeroptions);
@@ -30,13 +30,13 @@ const section2Observer = new IntersectionObserver(([{ isIntersecting }]) => {
 const section3Observer = new IntersectionObserver(([{ isIntersecting }]) => {
    const tweenvar = isIntersecting ? 1 : 0;
    let timeline = gsap.timeline();
-   timeline.to(".Section-3 .Heading", tweens.heading3[tweenvar]);
-   timeline.to(".Section-Grid-Item", tweens.section3Highlights[tweenvar]);
+   timeline.to(".Section-3 .Heading", tweens.fadeInFromBottom[tweenvar]);
+   timeline.to(".Section-Grid-Item", tweens.gridItemStaggerDrop[tweenvar]);
 }, observeroptions);
 
 const section4Observer = new IntersectionObserver(([{ isIntersecting }]) => {
    const tweenvar = isIntersecting ? 1 : 0;
-   gsap.to(".Section-4 .Heading", tweens.heading4[tweenvar]);
+   gsap.to(".Section-4 .Heading", tweens.fadeInFromLeft[tweenvar]);
 }, observeroptions);
 
 onMounted(() => {
@@ -47,9 +47,9 @@ onMounted(() => {
       section4Ref.value,
    ] as HTMLElement[];
 
-   section2 && section2Observer.observe(section2);
-   section3 && section3Observer.observe(section3);
-   section4 && section4Observer.observe(section4);
+   section2Observer.observe(section2);
+   section3Observer.observe(section3);
+   section4Observer.observe(section4);
 });
 </script>
 
@@ -192,7 +192,7 @@ onMounted(() => {
 .Paper-Plane {
    position: absolute;
    width: 90%;
-   rotate: 4deg;
+   transform: rotate(4deg);
    transition-duration: 500ms;
    color: #125e8a7a;
    filter: drop-shadow(0px 110px 40px);

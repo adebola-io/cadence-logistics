@@ -193,13 +193,13 @@ const links = reactive<Array<{ to: Page; text: string }>>([
       position: absolute;
    }
    .Toggled .Sidebar-Toggle-Line:nth-child(1) {
-      rotate: -45deg;
+      transform: rotate(-45deg);
    }
    .Toggled .Sidebar-Toggle-Line:nth-child(2) {
       width: 0;
    }
    .Toggled .Sidebar-Toggle-Line:nth-child(3) {
-      rotate: 45deg;
+      transform: rotate(45deg);
    }
    .Sidebar {
       position: fixed;

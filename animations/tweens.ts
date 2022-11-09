@@ -1,4 +1,4 @@
-export const tweens: TweenStore = {
+export const tweens = {
    firstHeading: [
       {
          x: -200,
@@ -6,21 +6,30 @@ export const tweens: TweenStore = {
          duration: 0.9,
       },
    ],
-   homeline: [
-      // Initial
+   lineExpand: [
       {
-         scaleX: 0.1,
+         scaleX: 0,
       },
-      // Final
       {
          scaleX: 1,
          duration: 0.6,
       },
    ],
-   secondHeading: [
+   fadeInFromBottom: [
       {
          opacity: 0,
          yPercent: 60,
+      },
+      {
+         opacity: 1,
+         yPercent: 0,
+         duration: 0.7,
+      },
+   ],
+   fadeInFromTop: [
+      {
+         opacity: 0,
+         yPercent: -60,
       },
       {
          opacity: 1,
@@ -62,18 +71,7 @@ export const tweens: TweenStore = {
          duration: 0.4,
       },
    ],
-   heading3: [
-      {
-         opacity: 0,
-         yPercent: 50,
-      },
-      {
-         opacity: 1,
-         yPercent: 0,
-         duration: 0.5,
-      },
-   ],
-   section3Highlights: [
+   gridItemStaggerDrop: [
       {
          opacity: 0,
          yPercent: -50,
@@ -83,12 +81,12 @@ export const tweens: TweenStore = {
          yPercent: 0,
          duration: 1,
          stagger: {
-            amount: 0.2,
+            amount: 0.4,
          },
          ease: "bounce.out",
       },
    ],
-   heading4: [
+   fadeInFromLeft: [
       {
          opacity: 0,
          xPercent: 30,

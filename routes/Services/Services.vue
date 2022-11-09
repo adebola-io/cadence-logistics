@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import gsap from "gsap";
 import Partner from "./Partner.vue";
 import ServiceItem from "./ServiceItem.vue";
 
@@ -15,6 +16,33 @@ import Konga from "@/assets/svg/konga.svg";
 import Etsy from "@/assets/svg/etsy.svg";
 import Ebay from "@/assets/svg/ebay.svg";
 import Macys from "@/assets/svg/macys.svg";
+
+import { onMounted, ref } from "vue";
+import { tweens } from "@/animations";
+
+const section2Ref = ref<Nullable<HTMLElement>>(null);
+let observerOptions = <IntersectionObserverInit>{
+   threshold: 0.3,
+};
+const section2Observer = new IntersectionObserver(([{ isIntersecting }]) => {
+   const tweenvar = isIntersecting ? 1 : 0;
+   gsap.to(".Grid-Container > *", tweens.gridItemStaggerDrop[tweenvar]);
+}, observerOptions);
+
+onMounted(() => {
+   let timeline = gsap.timeline();
+   const section2 = section2Ref.value as HTMLElement;
+   timeline.from(
+      ".App-Services .Section-1 .Heading",
+      tweens.fadeInFromBottom[0]
+   );
+   timeline.fromTo(
+      ".App-Services .Section-1 .Line",
+      tweens.lineExpand[0],
+      tweens.lineExpand[1]
+   );
+   section2Observer.observe(section2);
+});
 </script>
 
 <template>
@@ -28,7 +56,7 @@ import Macys from "@/assets/svg/macys.svg";
             disposal, security and more.
          </p>
       </section>
-      <section class="Section Section-2">
+      <section ref="section2Ref" class="Section Section-2">
          <div class="Grid-Container">
             <ServiceItem :src="Truck" alt="truck icon.">
                <template #heading> Procurement </template>
@@ -69,7 +97,7 @@ import Macys from "@/assets/svg/macys.svg";
       <section class="Section Section-3">
          <h1>Notable Partners</h1>
          <div class="Carousel-Container">
-            <div class="Partners-Carousel">
+            <div v-for="(_, index) in 2" :key="index" class="Partners-Carousel">
                <Partner :src="Jumia" alt="Jumia" />
                <Partner :src="Amazon" alt="Amazon" />
                <Partner :src="Konga" alt="Konga" />
@@ -84,7 +112,7 @@ import Macys from "@/assets/svg/macys.svg";
 
 <style scoped>
 .App-Services {
-   margin-top: 106px;
+   margin-top: var(--Header-Size);
 }
 .Section-1 {
    display: flex;
@@ -105,6 +133,7 @@ import Macys from "@/assets/svg/macys.svg";
    width: 75%;
    height: 7px;
    background-color: #c1dbea;
+   border-radius: 10px;
 }
 .Section-1 .Paragraph {
    width: 65%;
@@ -135,10 +164,47 @@ import Macys from "@/assets/svg/macys.svg";
    margin-bottom: 35px;
 }
 .Carousel-Container {
+   display: flex;
    width: 100%;
    overflow-x: hidden;
+   border-left: 2px solid var(--Dark-Green);
 }
 .Partners-Carousel {
    display: flex;
+   animation: scroll 4500ms infinite linear;
+}
+@keyframes scroll {
+   100% {
+      transform: translate(-100%);
+   }
+}
+@media (max-width: 1024px) {
+   .Grid-Container {
+      row-gap: 50px;
+   }
+}
+@media (max-width: 768px) {
+   .Section-2 {
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: fit-content;
+      max-height: fit-content;
+      padding-top: 90px;
+      margin-bottom: 39px;
+   }
+   .Grid-Container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: fit-content;
+      max-height: fit-content;
+   }
+}
+@media (max-width: 475px) {
+   .Section-1 .Paragraph {
+      font-size: 15px;
+      line-height: 25px;
+      width: 90%;
+   }
 }
 </style>

@@ -33,4 +33,29 @@ defineProps<{
    height: 50%;
    text-align: justify;
 }
+@media (max-width: 1024px) {
+   .Service-Item {
+      width: 100%;
+   }
+   .Service-Item img {
+      height: 100px;
+   }
+   .Service-Item p {
+      width: 90%;
+      font-size: 11pt;
+   }
+}
+@media (max-width: 768px) {
+   .Service-Item p {
+      width: 70%;
+      text-align: center;
+      font-size: 12pt;
+   }
+}
+@media (max-width: 475px) {
+   .Service-Item p {
+      width: 80%;
+      font-size: 11pt;
+   }
+}
 </style>

@@ -14,13 +14,11 @@ export function runAnimationConfig(
 export const PAPER_PLANE: AnimationConfig<HTMLImageElement> = {
    frames: [
       {
-         transform: "translate(7%, 272%)",
-         rotate: "90deg",
+         transform: "translate(7%, 272%) rotate(90deg)",
          opacity: "0",
       },
       {
-         transform: "translate(-45%, 100%)",
-         rotate: "15deg",
+         transform: "translate(-45%, 100%) rotate(15deg)",
       },
       {},
    ],
