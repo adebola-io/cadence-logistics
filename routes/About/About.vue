@@ -158,4 +158,27 @@ import Ayobami from "@/assets/image/ayobami.jpg";
 .Section-3 .Overlay {
    background-image: linear-gradient(180deg, white, transparent);
 }
+@media (max-width: 768px) {
+   .Section-2 {
+      display: flex;
+      flex-direction: column;
+      max-height: fit-content;
+      height: fit-content;
+      gap: 0;
+      padding: 0;
+   }
+
+   .Profile-Grid {
+      display: flex;
+      flex-direction: column;
+   }
+   .Section-3 .Heading {
+      width: 100%;
+   }
+}
+@media (max-width: 475px) {
+   .Section-1 .Heading {
+      width: 100%;
+   }
+}
 </style>

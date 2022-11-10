@@ -44,4 +44,23 @@ defineProps<{
    border-radius: 50%;
    filter: drop-shadow(-2px 4px 24px rgba(0, 0, 0, 0.25));
 }
+@media (max-width: 768px) {
+   .Profile-Pic {
+      height: 45vw;
+      border: 5px solid white;
+   }
+   .Person-Name {
+      font-size: 38px;
+   }
+   .Person p {
+      margin-top: 5px;
+      font-size: 16pt;
+      margin-bottom: 30px;
+   }
+}
+@media (max-width: 412px) {
+   .Person-Name {
+      font-size: 19pt;
+   }
+}
 </style>

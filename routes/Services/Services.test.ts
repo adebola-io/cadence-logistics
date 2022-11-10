@@ -16,6 +16,6 @@ describe("Services.vue", () => {
    });
    test("should show partners", () => {
       const partners = setup.wrapper.findAll("img.Partner");
-      expect(partners).toHaveLength(6);
+      expect(partners).toHaveLength(12);
    });
 });

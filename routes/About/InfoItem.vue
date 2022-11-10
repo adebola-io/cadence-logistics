@@ -52,4 +52,43 @@ const imageModule = await import(`../../assets/svg/${props.image}.svg`);
    transform: translateY(30%);
    opacity: 0.5;
 }
+@media (max-width: 1024px) {
+   .Info-Item img {
+      width: 300px;
+   }
+}
+@media (max-width: 768px) {
+   .Info-Item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 0;
+   }
+   .Info-Item h1 {
+      margin-inline: 0;
+      text-align: center;
+   }
+   .Info-Item img {
+      display: none;
+   }
+   .Info-Item p {
+      margin-inline: 0;
+      text-align: center;
+      padding: 0;
+      width: 80%;
+   }
+}
+@media (max-width: 475px) {
+   .Info-Item p {
+      font-size: 13pt;
+      line-height: 20pt;
+   }
+}
+@media (max-width: 375px) {
+   .Info-Item h1 {
+      font-size: 19pt;
+      margin-bottom: 0;
+   }
+}
 </style>
